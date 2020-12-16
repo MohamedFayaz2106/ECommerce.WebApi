@@ -10,6 +10,7 @@ namespace ECommerce.WebApi.Services
         public static int IntegerExtension(this string str)
         {
             return Int32.Parse(str);
+            throw new Exception("test");
         }
     }
 }
