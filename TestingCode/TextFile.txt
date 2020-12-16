@@ -1,0 +1,39 @@
+﻿//gmail configuration
+
+1)appsetting.json
+-----------------
+  "SmtpSettings": {
+      "Server": "smtp.gmail.com",
+      "Port": 465,
+      "SenderName": "Fayaz",
+      "SenderEmail": "mohamedfayaz21@gmail.com",
+      "Username": "mohamedfayaz21@gmail.com",
+      "Password": "9943439414"
+    },
+
+2)mailer class code
+------------------
+    using (var client = new SmtpClient())
+    {
+        await client.ConnectAsync(_smtpSettings.Server, _smtpSettings.Port,true);
+        await client.AuthenticateAsync(_smtpSettings.Username, _smtpSettings.Password);
+        await client.SendAsync(message);
+        await client.DisconnectAsync(true);
+    }
+
+
+//godaddy configuration
+
+  "SmtpSettings": {
+    "Server": "sg2plcpnl0254.prod.sin2.secureserver.net",
+    "Port": 465,
+    "SenderName": "Fayaz",
+    "SenderEmail": "noreply@universalplanter.com",
+    "Username": "noreply@universalplanter.com",
+    "Password": "3TwiuVcuKs5N"
+  },
+
+
+  2)mailer class code
+    
+    same as the Gmail configuration
